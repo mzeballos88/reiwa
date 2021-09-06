@@ -13,7 +13,7 @@ const items = [
 
 ]
 
-let tarea = new Promise((resolve) => {
+const tarea = new Promise((resolve) => {
     setTimeout(() =>{
         resolve(items);
     },2000);
