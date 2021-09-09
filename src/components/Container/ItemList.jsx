@@ -6,7 +6,7 @@ export default function ItemList({items}) {
         <>
         { items.map((item)=> 
         <div className="d-flex p-2">
-             <Item item={item} />
+             <Item key={item.id} item={item} />
         </div> ) } 
         </>
     )

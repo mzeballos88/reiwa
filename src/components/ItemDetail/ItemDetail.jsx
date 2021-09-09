@@ -1,5 +1,6 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
+import { NavLink } from 'react-router-dom'
 
 export default function ItemDetail({producto}) {
     return (
@@ -13,6 +14,10 @@ export default function ItemDetail({producto}) {
                     {producto.description}
                     </Card.Text>
                     <h3>{producto.price}</h3>
+                    <NavLink to='/'>
+                    <button className="btn btn-dark">Regresar</button>
+                    </NavLink>
+
                 </Card.Body>
             </Card>   
         </div>

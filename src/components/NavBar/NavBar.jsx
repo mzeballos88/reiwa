@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
@@ -13,20 +14,34 @@ export default function NavBar() {
         <div>
             <Navbar bg="light" expand="lg">
             <Container>
-                <Navbar.Brand href="#home">Reiwa Izakaya</Navbar.Brand>
+                <NavLink to="/">
+                    <Navbar.Brand href="#">Reiwa Izakaya</Navbar.Brand>
+                </NavLink>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
                     <Nav.Link href="#">Menú</Nav.Link>
                     <Nav.Link href="#">Nosotros</Nav.Link>
                     <NavDropdown title="Carta" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">Entradas</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">Platos de fondo</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.3">Bebidas</NavDropdown.Item>
+                        <NavLink to="/categoria/entrada">
+                            Entradas
+                        </NavLink>
+                        <br/>
+                        <NavLink to="/categoria/fondo">
+                            Platos de fondo
+                        </NavLink>
+                        <br/>
+                        <NavLink to="/categoria/bebida">
+                            Bebidas
+                        </NavLink>                    
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action/3.4">Ver todo</NavDropdown.Item>
+                    <NavLink to="/">
+                            Ver todo
+                        </NavLink>   
                     </NavDropdown>
-                    <Nav.Link href="#">Contacto</Nav.Link>
+                    <NavLink to="/cart">
+                    Cart
+                    </NavLink>    
                 </Nav>
                 </Navbar.Collapse>
                 <CartWidget />
