@@ -14,6 +14,7 @@ const producto = [
 
 const ItemDetailContainer = (props) => {
     const [productDetail,setProductDetail] = useState ({});
+    const [loading, setLoading] = useState(true)
     const id = props.match.params.id;
     const promise = new Promise ((resolve,reject) =>{
         const foundProduct = producto.find((p) => p.id === parseInt(id));
@@ -26,13 +27,18 @@ const ItemDetailContainer = (props) => {
 
     useEffect(() => {
         promise
-        .then(res => setTimeout(() => setProductDetail(res),1500))
+        .then(res =>{
+            setTimeout(() =>{ 
+            setProductDetail(res)
+            setLoading(false)},1500)    
+        }) 
         .catch(err => console.log(err));
     },[]);
 
     return (
         <div>
-        {
+        {   loading ? <h3>Cargando producto...</h3>
+            :
             productDetail.id &&
             <ItemDetail producto={productDetail} />
         }           
