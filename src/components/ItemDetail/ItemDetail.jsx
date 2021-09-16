@@ -1,13 +1,18 @@
-import React from 'react'
 import { Card } from 'react-bootstrap'
-import { NavLink } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+import { useCartContext } from '../../Context/CartContext'
 import ItemCount from '../ItemCount/ItemCount'
 
+
 export default function ItemDetail({producto}) {
+    const {id} = useParams()
+
+    const {addItem} = useCartContext()
+
     const onAdd = (count) =>{
-        console.log(`La cantidad es: ${count}`)
-        /*alert(`La cantidad es: ${count}`)*/
+        addItem({item: producto, quantity: count})
       }
+
     return (
         <div className='card'>
             <Card style={{ width: '18rem' }} key={producto.id}>
@@ -20,11 +25,8 @@ export default function ItemDetail({producto}) {
                     </Card.Text>
                     <h3>{producto.price}</h3>
                     <Card.Footer>
-                    <ItemCount initial={1} stock={12} onAdd={onAdd} />
+                    <ItemCount initial={1} stock={12} onAdd={onAdd} addItem={addItem} />
                     </Card.Footer>
-                    <NavLink to='/'>
-                    <button className="btn btn-outline-dark">← Regresar</button>
-                    </NavLink>
                 </Card.Body>
             </Card>   
         </div>

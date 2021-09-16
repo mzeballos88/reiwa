@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import { Button } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 
 
 export default function ItemCount({initial, stock, onAdd}) {
+
     const [count, setCount] = useState(initial);
     const [cambiarBoton, setCambiarBoton] = useState(false);
-
-
+   
     const sumaClick = () => {
       if(count < stock) setCount(count + 1);
     
@@ -42,14 +42,17 @@ export default function ItemCount({initial, stock, onAdd}) {
              <Button variant="dark" size="lg">
                Seguir comprando
              </Button>
-             </NavLink>
-             
+             </NavLink> 
            </div>)
                 :                
               (<div className="d-grid gap-2">
               <Button variant="dark" size="lg" onClick={handlerOnAdd}>
                 Agregar al carrito
               </Button>
+              <NavLink to='/'>
+              <button className="btn btn-outline-dark">← Regresar</button>
+              </NavLink>
+
             </div>)
             }
         </div>
