@@ -13,7 +13,7 @@ export function CartContextProvider({children}) {
             const updateCart = [...producto];
             updateCart.forEach((element) =>{
                 if(element.item.id === prod.id) {
-                    element.count += count
+                    element.quantity += count
                 }
             })
         setProducto(updateCart)

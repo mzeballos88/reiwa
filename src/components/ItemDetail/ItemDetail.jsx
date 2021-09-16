@@ -10,7 +10,7 @@ export default function ItemDetail({producto}) {
     const {addItem} = useCartContext()
 
     const onAdd = (count) =>{
-        addItem({item: producto, quantity: count})
+        addItem(producto, count)
       }
 
     return (
