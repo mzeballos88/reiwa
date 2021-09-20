@@ -7,9 +7,12 @@ import Container from 'react-bootstrap/Container'
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from './CartWidget';
 import './Style.css';
-
+import { useCartContext } from '../../Context/CartContext';
 
 export default function NavBar() {
+
+    const {iconCart} = useCartContext()
+
     return (
         <div>
             <Navbar bg="light" expand="lg">
@@ -42,8 +45,9 @@ export default function NavBar() {
                 </Nav>
                 </Navbar.Collapse>
                 <NavLink to="/cart">
-                    <CartWidget />
+                    <CartWidget /> 
                 </NavLink>
+                <h4>{iconCart()}</h4>
             </Container>
             </Navbar>
         </div>

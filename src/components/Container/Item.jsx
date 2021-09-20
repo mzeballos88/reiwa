@@ -10,7 +10,7 @@ export default function Item({item}) {
                     <Card.Img variant="top" src={item.img} />
                     <Card.Body>
                     <Card.Title>{item.title}</Card.Title>
-                    <h3>{item.price}</h3>
+                    <h3>S/.{item.price}</h3>
                     </Card.Body>
                     <NavLink to ={`/item/${item.id}`}>
                         <button className="btn btn-dark">Ver detalle</button>

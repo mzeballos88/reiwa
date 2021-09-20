@@ -28,10 +28,22 @@ export function CartContextProvider({children}) {
 
     const clear = () => setProducto([])
     
+    const removeItem = (item) => {
+        const cartFilter = producto.filter((prod) => prod.item.id !== item.item.id)
+        return setProducto([...cartFilter]);
 
-    const removeItem = (id) => {
+    }
+/*     const removeItem = (id) => {
         const cartFilter = producto.filter(element => element.item.id !== id)
         return setProducto(cartFilter)
+    } */
+
+    const iconCart = () => {
+        return producto.reduce ((acum, valor) => acum + valor.quantity, 0)
+    }
+
+    const precioTotal = () =>{
+        return producto.reduce ((acum, valor)=> (acum + (valor.quantity * valor.item.price)),0)
     }
 
     console.log(producto)
@@ -41,7 +53,9 @@ export function CartContextProvider({children}) {
             producto,
             addItem,
             clear,
-            removeItem
+            removeItem,
+            precioTotal,
+            iconCart
         }}>
         {children}
         </CartContext.Provider>

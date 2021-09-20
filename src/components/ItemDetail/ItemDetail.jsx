@@ -23,7 +23,7 @@ export default function ItemDetail({producto}) {
                     <Card.Text>
                     {producto.description}
                     </Card.Text>
-                    <h3>{producto.price}</h3>
+                    <h3>S/.{producto.price}</h3>
                     <Card.Footer>
                     <ItemCount initial={1} stock={12} onAdd={onAdd} addItem={addItem} />
                     </Card.Footer>
