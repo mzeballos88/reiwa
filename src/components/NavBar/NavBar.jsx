@@ -9,9 +9,10 @@ import CartWidget from './CartWidget';
 import './Style.css';
 import { useCartContext } from '../../Context/CartContext';
 
+
 export default function NavBar() {
 
-    const {iconCart} = useCartContext()
+    const {iconCart,producto} = useCartContext()
 
     return (
         <div>

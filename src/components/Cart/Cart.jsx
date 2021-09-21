@@ -25,7 +25,7 @@ export default function Cart() {
                             <br/>
                             Categoría: {prod.item.categoria}
                         </Card.Text>
-                        <Button variant="dark" size="lg" onClick={removeItem}>
+                        <Button variant="dark" size="lg" onClick={() =>removeItem(prod.item.id)}>
                             Eliminar Item
                         </Button>
                     </Card.Body>
@@ -42,8 +42,7 @@ export default function Cart() {
              <Button variant="dark" size="lg">
                Seguir comprando
              </Button>
-             </NavLink>     
-
+             </NavLink>      
         </>
     )
-}
+} 

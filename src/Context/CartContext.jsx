@@ -29,14 +29,9 @@ export function CartContextProvider({children}) {
     const clear = () => setProducto([])
     
     const removeItem = (item) => {
-        const cartFilter = producto.filter((prod) => prod.item.id !== item.item.id)
-        return setProducto([...cartFilter]);
-
-    }
-/*     const removeItem = (id) => {
-        const cartFilter = producto.filter(element => element.item.id !== id)
-        return setProducto(cartFilter)
-    } */
+            const cartFilter = producto.filter(element => element.item.id !== item)
+            return setProducto(cartFilter)
+        }
 
     const iconCart = () => {
         return producto.reduce ((acum, valor) => acum + valor.quantity, 0)
