@@ -1,9 +1,7 @@
 import { Card } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
-/*import { useCartContext } from '../../Context/CartContext'*/
 
 export default function Item({item}) {
-   /*const producto = useCartContext()*/
 
     return (
                 <Card style={{ width: '18rem' }} key={item.id}>

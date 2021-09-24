@@ -12,7 +12,7 @@ import { useCartContext } from '../../Context/CartContext';
 
 export default function NavBar() {
 
-    const {iconCart,producto} = useCartContext()
+    const {iconCart} = useCartContext()
 
     return (
         <div>
@@ -27,19 +27,19 @@ export default function NavBar() {
                     <Nav.Link href="#">Menú</Nav.Link>
                     <Nav.Link href="#">Nosotros</Nav.Link>
                     <NavDropdown title="Carta" id="basic-nav-dropdown">
-                        <NavLink to="/categoria/entrada" style={{textDecoration: 'none'}}>
+                        <NavLink to="/categoria/entrada" style={{textDecoration: 'none', color: 'black'}}>
                             Entradas
                         </NavLink>
                         <br/>
-                        <NavLink to="/categoria/fondo" style={{textDecoration: 'none'}} >
+                        <NavLink to="/categoria/fondo" style={{textDecoration: 'none', color: 'black'}} >
                             Platos de fondo
                         </NavLink>
                         <br/>
-                        <NavLink to="/categoria/bebida" style={{textDecoration: 'none'}}>
+                        <NavLink to="/categoria/bebida" style={{textDecoration: 'none', color: 'black'}}>
                             Bebidas
                         </NavLink>                    
                     <NavDropdown.Divider />
-                    <NavLink to="/" style={{textDecoration: 'none'}}>
+                    <NavLink to="/" style={{textDecoration: 'none', color: 'black'}}>
                             Ver todo
                     </NavLink>   
                     </NavDropdown>  
