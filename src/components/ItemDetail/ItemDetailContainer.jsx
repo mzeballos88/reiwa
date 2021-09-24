@@ -6,13 +6,13 @@ import { getFirestore } from '../../service/getFirebase';
 const ItemDetailContainer = (props) => {
     const [productDetail,setProductDetail] = useState ({});
     const [loading, setLoading] = useState(true)
-    const id = props.match.params.id;
    
      useEffect(() => {
         const database = getFirestore();
         const id = props.match.params.id;
-        const itemCollection = database.collection('items').doc(id).get()
-        .then(data => {
+        const itemCollection = database.collection('items').doc(id).get();
+
+        itemCollection.then(data => {
             if(data.size === 0){
                 <h1>Producto no encontrado</h1>;
             }

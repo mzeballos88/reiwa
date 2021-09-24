@@ -1,13 +1,10 @@
 import { Card } from 'react-bootstrap'
-import { useParams } from 'react-router-dom'
 import { useCartContext } from '../../Context/CartContext'
 import ItemCount from '../ItemCount/ItemCount'
 
 
 export default function ItemDetail({producto}) {
-    const {id} = useParams()
-
-    const {addItem} = useCartContext()
+      const {addItem} = useCartContext()
 
     const onAdd = (count) =>{
         addItem(producto, count)

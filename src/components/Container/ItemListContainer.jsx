@@ -26,19 +26,6 @@ const ItemListContainer=() => {
     }, [category])
 
 
-      /*   if (category === undefined){
-            tarea
-            .then(respuesta => {
-                setItems(respuesta)
-                setLoading(false)                
-            })
-        }else{
-            tarea
-            .then((respuesta) => setItems(respuesta.filter( r => category === r.categoria ))) 
-        }
-    }, [category])
-
- */
     return (
         <div>
             {   loading ? <Spinner animation="grow" />
