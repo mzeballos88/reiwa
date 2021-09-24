@@ -13,11 +13,9 @@ const ItemListContainer=() => {
 
     useEffect(() => {
         const database = getFirestore();
-        /* const queryCategory = database.collection('categorias').get('id') */
-        const itemCollection = database.collection('items').get()
-        if (category === undefined){
-            itemCollection
-        .then(data => {
+        let itemCollection = database.collection("items");
+        if (category) itemCollection = itemCollection.where("categoria","==", category);
+        itemCollection.get().then(data => {
             if(data.size === 0){
                 console.log('no hay nada')
             }
@@ -25,11 +23,6 @@ const ItemListContainer=() => {
             setLoading(false) 
         })
         .catch(err => console.log(err));
-        
-        }else{
-            itemCollection
-        .then((data) => setItems(data.docs.filter(item => category === item.categoria)))
-        }
     }, [category])
 
 
@@ -50,7 +43,6 @@ const ItemListContainer=() => {
         <div>
             {   loading ? <Spinner animation="grow" />
             :                 
-            <h1 title="El lugar de auténtica comida japonesa"/> &&
             <ItemList items={items} />
             } 
         </div>
