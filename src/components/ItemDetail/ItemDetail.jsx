@@ -18,7 +18,7 @@ export default function ItemDetail({producto}) {
                     <Card.Title>
                     {producto.title}</Card.Title>
                     <Card.Text>
-                    {producto.description}
+                    {producto.descripcion}
                     </Card.Text>
                     <h3>S/.{producto.price}</h3>
                     <Card.Footer>

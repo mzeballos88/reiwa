@@ -1,11 +1,55 @@
 import { Button, Card } from "react-bootstrap";
 import { useCartContext } from "../../Context/CartContext"
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
+import { useState } from 'react';
+import { getFirestore } from "../../service/getFirebase";
+import firebase from "firebase";
+import 'firebase/firestore';
 
+const initialState = {
+    nombre: '',
+    email: '',
+    telefono: '',
+}
 
 export default function MostrarCart() {
+
+    const {producto, clear, removeItem, precioTotal} = useCartContext() 
+    const [formulario, setFormulario] = useState(false);
     
-    const {producto, clear, removeItem, precioTotal} = useCartContext()  
+    const abrirFormulario=()=> {
+        setFormulario(true)
+       }
+    
+    const [formData, setFormData] = useState (initialState)
+
+    function handleChange(e){
+        setFormData({
+            ...formData,
+            [e.target.name]:e.target.value
+        })
+    }
+
+    function handleSumit(e){
+        e.preventDefault()
+        const newOrder={
+            buyer: formData,
+            items: producto,
+            date: firebase.firestore.Timestamp.fromDate(new Date()),
+            total: precioTotal(),
+        }
+
+        const database = getFirestore()
+        const orders = database.collection('orders')
+
+        orders.add(newOrder)
+        .then(respuesta => alert( `Gracias por tu compra! tu numero de orden es: ${respuesta.id}`))
+        .catch(err => console.log(err))
+        .finally(()=>{
+            setFormData(initialState)
+            clear()
+        })
+    }
     
     return (
         <>
@@ -18,12 +62,12 @@ export default function MostrarCart() {
                         <Card.Title><h2>{prod.item.title} x{prod.quantity}</h2></Card.Title>
                         <Card.Text>
                         <Card.Img variant="top" style={{ width: '7rem' , margin: '1rem' }} src={prod.item.img} />
-                            {prod.item.description}
+                            {prod.item.descripcion}
                             <br/>
                             Categoría: {prod.item.categoria}
                         </Card.Text>
                         <Button variant="dark" size="lg" onClick={() =>removeItem(prod.item.id)}>
-                            Eliminar Item
+                            Borrar item
                         </Button>
                     </Card.Body>
                 </Card>
@@ -34,12 +78,50 @@ export default function MostrarCart() {
             <Button variant="dark" size="lg" style={{ margin: '1rem' }} onClick={clear}>
                 Vaciar Carrito
             </Button>
-
             <NavLink to='/' >
              <Button variant="dark" size="lg">
                Seguir comprando
              </Button>
-             </NavLink>   
+            </NavLink>  
+            {
+            formulario ?
+            (
+                <div class="mb-5">
+                    <h1>Completa los siguientes campos para proceder: </h1>
+                    <form 
+                    onChange={handleChange}
+                    onSubmit={handleSumit}>
+                        <label>Nombre
+                        <br/>                    
+                        <input type="text" placeholder="Ingrese Nombre" name="nombre" value={formData.nombre}/>
+                        </label>
+                        <label>Teléfono
+                        <br/> 
+                        <input type="text" placeholder="Ingrese Teléfono" name="telefono" value={formData.telefono}/>
+                        </label>
+                        <label>Email
+                        <br/> 
+                        <input type="email" placeholder="Ingrese Email" name="email" value={formData.email}/>
+                        </label>
+                        <label>Confirmar email
+                        <br/> 
+                        <input type="email" placeholder="Confirme Email" name="email2"/>
+                        </label>
+                        <br/> 
+                        <Button type="sumit" variant="dark" size="lg" style={{ margin: '1rem' }}>
+                            Confirmar compra
+                        </Button>
+                        
+                    </form>  
+                </div>)
+            :
+           (
+            <Button variant="dark" size="lg" style={{ margin: '1rem' }} onClick={abrirFormulario}>
+                Terminar compra
+            </Button>       
+            )
+            }  
         </>
     )
 } 
+
