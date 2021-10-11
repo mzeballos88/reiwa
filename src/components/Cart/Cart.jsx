@@ -1,6 +1,6 @@
 import { useCartContext } from "../../Context/CartContext"
-import MostrarCart from "./MostrarCart";
-import CartVacio from "./CartVacio";
+import ShowCart from "./ShowCart";
+import CartEmpty from "./CartEmpty";
 
 
 export default function Cart() {
@@ -9,9 +9,9 @@ export default function Cart() {
     return (
         <>
         {producto.length ? 
-        <MostrarCart />
+        <ShowCart />
              :
-        <CartVacio/>
+        <CartEmpty/>
              }    
         </>
     )

@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# Reiwa Izakaya APP 🍣
+### Proyecto Final de React.JS 
+[![N|Solid](https://bit.ly/3FBRVuz)](https://www.loom.com/share/54a289a818574a1587a9f2e2dad8d165)
+### ⬆️ Mira el video de funcionamiento
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Brief
+Reiwa Izakaya 🍱 es un restaurante de comida japonesa que busca desarrollar un APP de E-commerce que facilite a sus clientes el proceso de compra, mejore la experiencia y además ayude a llevar mayor control de los pedidos para fines administrativos.
 
-In the project directory, you can run:
+## Características
+Este App fue creado en React.JS con la ayuda de las siguientes librerias y servidores:
 
-### `npm start`
+Para Front-end
+- React version 17.0.2
+- React Bootstrap version 2.0.0
+Los componentes utilizados son: Navbar, Spinners, Buttons y Cards.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Para el código:
+- Github
+Para acceder al repositorio ingresar al siguiente link:
+https://github.com/mzeballos88/reiwa
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Para la base de datos y backend:
+- Firebase version 8.9.1
+- Node.Js version 10
 
-### `npm test`
+## Instalación
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Reiwa Izakaya APP requiere de [Node.js](https://nodejs.org/) para funcionar.
 
-### `npm run build`
+```sh
+Clonar repositorio
+npm i
+node app
+```
+Para instalar Firebase.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+npm install firebase
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Para dar inicio al React.Js y al App..
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```sh
+npm start
+```
 
-### `npm run eject`
+## Contacto
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Para mayor detalle, dudas u observaciones contactar con zeballos.me@gmail.com
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### ¡Gracias!

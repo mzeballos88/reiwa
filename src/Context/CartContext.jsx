@@ -37,7 +37,7 @@ export function CartContextProvider({children}) {
         return producto.reduce ((acum, valor) => acum + valor.quantity, 0)
     }
 
-    const precioTotal = () =>{
+    const showTotal = () =>{
         return producto.reduce ((acum, valor)=> (acum + (valor.quantity * valor.item.price)),0)
     }
 
@@ -49,7 +49,7 @@ export function CartContextProvider({children}) {
             addItem,
             clear,
             removeItem,
-            precioTotal,
+            showTotal,
             iconCart
         }}>
         {children}

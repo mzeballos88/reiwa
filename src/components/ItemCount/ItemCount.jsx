@@ -6,32 +6,32 @@ import { NavLink } from "react-router-dom";
 export default function ItemCount({initial, stock, onAdd}) {
 
     const [count, setCount] = useState(initial);
-    const [cambiarBoton, setCambiarBoton] = useState(false);
+    const [changeButton, setChangeButton] = useState(false);
    
-    const sumaClick = () => {
+    const addClick = () => {
       if(count < stock) setCount(count + 1);
     
     }
 
-  const restaClick = () => {
+  const removeClick = () => {
     if(count > initial) setCount(count - 1);
     }
 
   const handlerOnAdd=()=> {
     onAdd(count)
     setCount(initial)
-    setCambiarBoton(true)
+    setChangeButton(true)
    }
 
   
     return (
         <div>
               <label>Cantidad</label> <br />
-             <button className="btn" onClick={sumaClick}>+</button>
+             <button className="btn" onClick={addClick}>+</button>
              <h3>{count}</h3>
-             <button className="btn" onClick={restaClick}>-</button><br />
+             <button className="btn" onClick={removeClick}>-</button><br />
              {
-               cambiarBoton ? 
+               changeButton ? 
              (<div className="d-grid gap-2">
              <NavLink to='/cart' >
              <Button variant="dark" size="lg">
