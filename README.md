@@ -1,6 +1,6 @@
 # Reiwa Izakaya APP 🍣
 ### Proyecto Final de React.JS 
-[![N|Solid](https://bit.ly/3FBRVuz)](https://www.loom.com/share/54a289a818574a1587a9f2e2dad8d165)
+[![N|Solid](https://cdn-icons-png.flaticon.com/512/84/84180.png)](https://www.loom.com/share/54a289a818574a1587a9f2e2dad8d165)
 ### ⬆️ Mira el video de funcionamiento
 
 
